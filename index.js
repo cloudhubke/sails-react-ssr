@@ -67,7 +67,7 @@ require("@babel/register")({
       "module-resolver",
       {
         alias: {
-          models: "./models",
+          auth: "./models",
         },
       },
     ],
