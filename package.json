@@ -1,6 +1,6 @@
 {
   "name": "sails-react-ssr",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -16,6 +16,7 @@
     "@babel/preset-env": "^7.12.11",
     "@babel/preset-react": "^7.12.10",
     "@babel/register": "^7.12.10",
+    "babel-plugin-module-resolver": "^4.1.0",
     "cloudhub-components": "^1.4.15",
     "detect-node": "^2.0.4",
     "ignore-styles": "^5.0.1",
