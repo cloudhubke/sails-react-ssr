@@ -59,19 +59,31 @@ register(undefined, (mod, filename) => {
   }
 });
 
+var appDir = path.dirname(require.main.filename);
+console.log("====================================");
+console.log(appDir);
+console.log("====================================");
+
+require("@babel/polyfill");
 require("@babel/register")({
-  ignore: [/(node_modules)/],
-  presets: ["@babel/preset-env", "@babel/preset-react"],
+  // ignore: [/(node_modules)/],
+  presets: ["@babel/env", "@babel/react"],
   plugins: [
     [
       "module-resolver",
       {
+        root: [`${appDir}/reactapp/app`],
         alias: {
-          auth: "./models",
+          // auth: "./auth",
         },
       },
     ],
+
     "@babel/plugin-syntax-dynamic-import",
+    "dynamic-import-node",
+    // "@babel/plugin-syntax-dynamic-import",
+    // "@babel/plugin-transform-modules-commonjs",
+    // "@babel/plugin-transform-runtime",
     "react-loadable/babel",
   ],
 });

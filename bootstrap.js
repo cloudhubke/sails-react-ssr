@@ -58,10 +58,11 @@ register(undefined, (mod, filename) => {
     mod.exports = `/static/media/${bn}`;
   }
 });
+require("@babel/polyfill");
 
 require("@babel/register")({
-  ignore: [/(node_modules)/],
-  presets: ["@babel/preset-env", "@babel/preset-react"],
+  // ignore: [/(node_modules)/],
+  presets: ["@babel/env", "@babel/react"],
   plugins: [
     "syntax-dynamic-import",
     "dynamic-import-node",
