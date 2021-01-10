@@ -1,10 +1,11 @@
 {
   "name": "sails-react-ssr",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prepush": "npm version minor --no-git-tag-version",
+    "push": "git add . && git commit -m \"updates\" && git push && npm publish"
   },
   "keywords": [],
   "author": "Bernard Gaitho <gaithoben@gmail.com> (http://github.com/gaithoben)",
@@ -20,6 +21,7 @@
     "md5-file": "^5.0.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "react-jss": "^10.5.0",
     "react-loadable": "^5.5.0"
   }
 }
