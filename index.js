@@ -8,31 +8,6 @@ const mimeTypes = {
   ".png": "image/png",
 };
 
-//global variables
-if (typeof localStorage === "undefined") {
-  global.localStorage = {
-    getItem: () => {},
-    setItem: () => {},
-  };
-}
-
-if (typeof screen === "undefined") {
-  global.screen = {};
-}
-
-if (typeof window === "undefined") {
-  global.window = {
-    document: {
-      documentElement: {
-        className: "",
-      },
-    },
-    navigator: {
-      userAgent: "",
-    },
-  };
-}
-
 register(undefined, (mod, filename) => {
   const ext = [".png", ".jpg"].find((f) => filename.endsWith(f));
   const svgext = [".svg"].find((f) => filename.endsWith(f));
@@ -60,31 +35,21 @@ register(undefined, (mod, filename) => {
 });
 
 var appDir = path.dirname(require.main.filename);
-console.log("====================================");
-console.log(appDir);
-console.log("====================================");
 
-require("@babel/polyfill");
+// require('@babel/polyfill');
 require("@babel/register")({
-  // ignore: [/(node_modules)/],
-  presets: ["@babel/env", "@babel/react"],
+  ignore: [/(node_modules)/],
+  presets: ["@babel/preset-env", "@babel/preset-react"],
   plugins: [
     [
       "module-resolver",
       {
         root: [`${appDir}/reactapp/app`],
-        alias: {
-          // auth: "./auth",
-        },
+        alias: {},
       },
     ],
-
     "@babel/plugin-syntax-dynamic-import",
-    "dynamic-import-node",
-    // "@babel/plugin-syntax-dynamic-import",
-    // "@babel/plugin-transform-modules-commonjs",
-    // "@babel/plugin-transform-runtime",
-    "react-loadable/babel",
+    "@babel/plugin-transform-runtime",
+    "@react-loadable/revised/babel",
   ],
 });
-// require('./index');
