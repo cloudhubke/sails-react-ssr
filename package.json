@@ -1,6 +1,6 @@
 {
   "name": "sails-react-ssr",
-  "version": "1.11.0",
+  "version": "1.12.0",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -18,16 +18,12 @@
     "@babel/preset-env": "^7.12.11",
     "@babel/preset-react": "^7.12.10",
     "@babel/register": "^7.12.10",
-    "@react-loadable/revised": "^0.0.23",
     "babel-plugin-module-resolver": "^4.1.0",
     "cloudhub-components": "latest",
-    "detect-node": "^2.0.4",
     "ignore-styles": "^5.0.1",
     "md5-file": "^5.0.0",
-    "query-string": "^6.13.8",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "react-loadable": "^5.5.0",
     "react-redux": "^7.2.2",
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0"
