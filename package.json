@@ -1,6 +1,6 @@
 {
   "name": "sails-react-ssr",
-  "version": "1.12.0",
+  "version": "1.14.0",
   "description": "",
   "main": "index.js",
   "scripts": {
