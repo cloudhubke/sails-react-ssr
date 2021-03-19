@@ -36,7 +36,7 @@ register(undefined, (mod, filename) => {
 
 var appDir = path.dirname(require.main.filename);
 
-// require('@babel/polyfill');
+require("@babel/polyfill");
 require("@babel/register")({
   ignore: [/(node_modules)/],
   presets: ["@babel/preset-env", "@babel/preset-react"],
